@@ -1,10 +1,11 @@
 import './App.css';
+import './style.css';
 // colocar react-icons
 
 function App() {
   return (
     <div className="App">
-      <h1>Hi</h1>
+      <button type="submit" className="white-button">Enviar</button>
     </div>
   );
 }

@@ -10,10 +10,12 @@ function NavbarComponent() {
     <Navbar key={'xx1'} bg="white" expand={'xx1'} className="mb-3">
       <Container fluid>
         <Navbar.Brand href="#">Project.io</Navbar.Brand>
+        {/* colocar para a direita */}
         <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Cadastre-se</Nav.Link>
-              <Nav.Link href="#action2">Login</Nav.Link>
-            </Nav>
+          {/* mudar os dois para botão */}
+          <Nav.Link href="#action1">Cadastre-se</Nav.Link>
+          <Nav.Link href="#action2">Login</Nav.Link>
+        </Nav>
         <Navbar.Toggle aria-controls={'offcanvasNavbar-expand-xx1'} />
         <Navbar.Offcanvas
           id={'offcanvasNavbar-expand-xx1'}
