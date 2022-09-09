@@ -1,59 +1,42 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import './Navbar.css';
+
+let slideSearch = document.querySelector(".search-area");
+let buttonClicked = 0;
+
+function showBar() {
+  if (buttonClicked === 0) {
+    slideSearch.style.display = "flex";
+    buttonClicked = 1;
+  } else {
+    slideSearch.style.display = "none";
+    buttonClicked = 0;
+  }
+}
 
 function NavbarComponent() {
   return (
-    <Navbar key={'xx1'} bg="white" expand={'xx1'} className="mb-3">
-      <Container fluid>
-        <Navbar.Brand href="#">Project.io</Navbar.Brand>
-        {/* colocar para a direita */}
-        <Nav className="justify-content-end flex-grow-1 pe-3">
-          {/* mudar os dois para botão */}
-          <Nav.Link href="#action1">Cadastre-se</Nav.Link>
-          <Nav.Link href="#action2">Login</Nav.Link>
-        </Nav>
-        <Navbar.Toggle aria-controls={'offcanvasNavbar-expand-xx1'} />
-        <Navbar.Offcanvas
-          id={'offcanvasNavbar-expand-xx1'}
-          aria-labelledby={'offcanvasNavbarLabel-expand-xx1'}
-          placement="end"
-        >
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title id={'offcanvasNavbarLabel-expand-xx1'}>
-              Pesquise por projetos
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Form className="d-flex">
-              {/* Quebrar linha para cada area de texto e botão */}
-              <Form.Control
-                type="search"
-                placeholder="Título"
-                className="me-2"
-                aria-label="Título"
-              />
-              <Form.Control
-                type="search"
-                placeholder="Assunto"
-                className="me-2"
-                aria-label="Assunto"
-              />
-              <Form.Control
-                type="search"
-                placeholder="Autor"
-                className="me-2"
-                aria-label="Autor"
-              />
-              <Button variant="outline-success">Pesquisar</Button>
-            </Form>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
-      </Container>
-    </Navbar>
+    <div>
+      <div className="menu">
+        <button className="title">PROJECT.io</button>
+        <div className="buttons-div">
+          <button className="search" onClick={showBar}>
+            <img src="/search-icon.png" alt="Pesquisar" />
+          </button>
+          <button className="button">Login</button>
+          <button className="button">Cadastre-se</button>
+        </div>
+      </div>
+      <div className="search-area">
+        <h1 className="search-label">Pesquisar por projeto</h1>
+        <form className="form-area">
+          <input type="text" name="title" placeholder="Título" className="input"/>
+          <input type="text" name="author" placeholder="Autor" className="input"/>
+          <input type="text" name="theme" placeholder="Tema" className="input"/>
+          <input type="text" name="subject" placeholder="Matéria" className="input"/>
+          <button type="submit" className="blue-button">Pesquisar</button>
+        </form>
+      </div>
+    </div>
   );
 }
 
