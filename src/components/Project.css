@@ -1,0 +1,44 @@
+.project {
+  text-decoration: none;
+  position: relative;
+}
+
+.project-card {
+  width: 500px;
+  height: 200px;
+  padding: 3%;
+  background-color: #fff;
+  margin: 30px 0;
+  text-decoration: none;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0;
+  font-size: 20px;
+}
+
+.author {
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.description {
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.project-link {
+  font-weight: 200;
+  font-size: 16px;
+  color: #000;
+  text-decoration: underline !important;
+  position: absolute;
+  bottom: 20px;
+}

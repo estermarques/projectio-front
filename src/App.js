@@ -1,6 +1,7 @@
 import './App.css';
 import './style.css';
 import NavbarComponent from './components/Navbar';
+import Project from './components/Project';
 // colocar react-icons
 
 function App() {
@@ -9,6 +10,11 @@ function App() {
       <NavbarComponent/>
       <button type="submit" className="white-button">Enviar</button>
       <input type="text" name="name" placeholder="Seu nome" className="input"/>
+      <Project
+        title="um titulo bem grande"
+        author="eu mesma"
+        description="Suspendisse ac condimentum velit. Quisque ornare vitae lectus vel varius. Pellentesque tincidunt ultrices ullamcorper. Aenean quis pulvinar risus, at varius magna."
+      />
     </div>
   );
 }
