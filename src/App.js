@@ -2,6 +2,7 @@ import './App.css';
 import './style.css';
 import NavbarComponent from './components/Navbar';
 import Project from './components/Project';
+import Login from './pages/Login';
 // colocar react-icons
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         author="eu mesma"
         description="Suspendisse ac condimentum velit. Quisque ornare vitae lectus vel varius. Pellentesque tincidunt ultrices ullamcorper. Aenean quis pulvinar risus, at varius magna."
       />
+      <Login/>
     </div>
   );
 }
