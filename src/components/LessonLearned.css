@@ -1,0 +1,22 @@
+.lesson-learned {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2% 3%;
+  left: 0;
+  right: 0;
+  padding: 0;
+}
+
+.lesson-learned-titles {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #296CA6;
+  text-align: left;
+}
+
+.lesson-learned-fields {
+  font-weight: 200;
+  font-size: 16px;
+}

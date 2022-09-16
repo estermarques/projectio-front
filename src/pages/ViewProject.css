@@ -1,0 +1,68 @@
+.project-page {
+  font-family: Arial, Helvetica, sans-serif;
+  left: 0;
+  right: 0;
+}
+
+.project-page th {
+  width: 200px;
+}
+
+.project-page-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #296ca6;
+  margin-top: 0;
+}
+
+.project-page-subtitle {
+  font-size: 25px;
+  font-weight: bold;
+  color: #296ca6;
+}
+
+.create-comment {
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.send {
+  border: none;
+}
+
+.send-icon {
+  width: 25px;
+  height: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.comment-input {
+  border-radius: 4px;
+  border-width: thin;
+  border-color: #296CA6;
+  box-shadow: none;
+  padding: 11px 20px;
+  height: 50px;
+  width: 100%;
+  font-size: 15px;
+  color: #296CA6;
+}
+
+.project-title-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-icon-button {
+  border: none;
+  background-color: #f2f2f2;
+}
+
+.project-icon {
+  width: 30px;
+  height: auto;
+}

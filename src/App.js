@@ -1,22 +1,27 @@
 import './App.css';
 import './style.css';
 import NavbarComponent from './components/Navbar';
-import Project from './components/Project';
-import Registration from './pages/Registration';
-// colocar react-icons
+import ViewProject from './pages/ViewProject';
+import Amplify from 'aws-amplify';
+import amplify_config from './amplify-config';
+
+Amplify.configure(amplify_config);
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <NavbarComponent/>
-      <button type="submit" className="white-button">Enviar</button>
-      <input type="text" name="name" placeholder="Seu nome" className="input"/>
-      <Project
-        title="um titulo bem grande"
-        author="eu mesma"
-        description="Suspendisse ac condimentum velit. Quisque ornare vitae lectus vel varius. Pellentesque tincidunt ultrices ullamcorper. Aenean quis pulvinar risus, at varius magna."
-      />
-      <Registration/>
+      <div className="App">
+        <ViewProject
+          title="Country roads, take me home To the place I belong"
+          author="eu mesma"
+          theme="teste"
+          subject="teste"
+          description= "O grande empenho dos egressos, como eu, dos atuais alunos, dos professores, dos servidores técnicoadministrativos ajudou na consolidação de nossa universidade."
+          repositoryLink="https://github.com/estermarques/tcc-back-end"
+          stepsTaken="teste"
+        />
+      </div>
     </div>
   );
 }
