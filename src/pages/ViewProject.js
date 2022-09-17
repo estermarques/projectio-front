@@ -1,18 +1,26 @@
+import React, { useState } from 'react';
 import './ViewProject.css';
 import Comment from '../components/Comment';
 import LessonLearned from '../components/LessonLearned';
+import Popup from '../components/Popup';
 
 function ViewProject(props) {
+  const [isOpen, setIsOpen] = useState(false);
+ 
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <div className="project-page">
       <div className="project-title-div">
         <h1 className="project-page-title">{props.title}</h1>
         <div>
           <button className="project-icon-button">
-            <img src="/edit2-icon.png" alt="Editar" className="project-icon"/>
+            <img src="/edit2-icon.png" alt="Editar projeto" className="project-icon"/>
           </button>
           <button className="project-icon-button">
-            <img src="/trash-icon.webp" alt="Apagar" className="project-icon"/>
+            <img src="/trash-icon.webp" alt="Apagar projeto" className="project-icon" onClick={togglePopup}/>
           </button>
         </div>
       </div>
@@ -59,6 +67,10 @@ function ViewProject(props) {
           <img src="/send-icon.png" alt="Enviar" className="send-icon"/>
         </button>
       </form>
+
+      {isOpen && <Popup
+        handleClose={togglePopup}
+      />}
     </div>
   );
 }
