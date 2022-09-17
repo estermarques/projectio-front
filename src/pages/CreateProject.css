@@ -41,3 +41,9 @@
 input::placeholder{
   color: #296CA6;
 }
+
+.lesson-learned-btn {
+  border: none;
+  background-color: #bfbfbf;
+  margin-bottom: 20px;
+}

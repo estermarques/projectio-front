@@ -1,7 +1,7 @@
 import './App.css';
 import './style.css';
 import NavbarComponent from './components/Navbar';
-import EditProject from './pages/EditProject';
+import ChooseLessonLearned from './pages/ChooseLessonLearned';
 import Amplify from 'aws-amplify';
 import amplify_config from './amplify-config';
 
@@ -12,7 +12,7 @@ function App() {
     <div>
       <NavbarComponent/>
       <div className="App">
-        <EditProject/>
+        <ChooseLessonLearned/>
       </div>
     </div>
   );
