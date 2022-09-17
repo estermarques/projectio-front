@@ -1,6 +1,7 @@
 .create-project-page {
   display: flex;
   flex-direction: column;
+  padding-bottom: 15px;
 }
 
 .create-project-label {
@@ -20,7 +21,7 @@
   border-style: none;
   font-size: 18px;
   /* font-family: 'Roboto'; */
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 
