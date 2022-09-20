@@ -13,7 +13,7 @@ function showBar() {
   }
 }
 
-function NavbarComponent() {
+function NavbarComponent(props) {
   return (
     <div>
       <div className="menu">
@@ -22,8 +22,8 @@ function NavbarComponent() {
           <button className="search" onClick={showBar}>
             <img src="/search-icon.png" alt="Pesquisar" />
           </button>
-          <button className="button">Login</button>
-          <button className="button">Cadastre-se</button>
+          <button className="button">{props.firstBtn}</button>
+          <button className="button">{props.secondBtn}</button>
         </div>
       </div>
       <div className="search-area">
