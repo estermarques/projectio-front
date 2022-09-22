@@ -2,6 +2,24 @@ import Project from '../components/Project';
 import './ListProjects.css';
 
 function ListProjects(props) {
+  const getPrj = (projectId) => {
+    const obj = {
+      projectId
+    };
+
+    fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/project", {
+      "method": "GET",
+      "body": JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
   return (
     <div>
       <div className="title-div">

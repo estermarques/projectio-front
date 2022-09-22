@@ -1,4 +1,57 @@
 import './Access.css';
+
+function Registration() {
+  const createUser = () => {
+    const email = (document.getElementById('email').value);
+    const name = (document.getElementById('name').value);
+    const password = (document.getElementById('password').value);
+    const isProfessor = (!!document.getElementById('isProfessor').value);
+
+    const obj = {
+      name,
+      email,
+      password,
+      isProfessor,
+    };
+
+    fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/user", {
+      "method": "POST",
+      "body": JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
+  return (
+    <div className="access-page">
+      <h1 className="access-label">Cadastre-se</h1>
+      <input
+        type="text"
+        name="name"
+        placeholder="nome"
+        className="input"
+        id="name"
+      />
+      <input type="text" name="email" placeholder="e-mail" className="input" id="email"/>
+      <input type="password" name="password" placeholder="senha" className="input" id="password"/>
+      <input type="password" name="password" placeholder="confirme a senha" className="input" id="password2"/>
+      <div className="checkbox-div">
+        <input type="checkbox" name="isProfessor" className="input-checkbox" id="isProfessor"/>
+        <h2 className="checkbox-text">Sou um professor</h2>
+      </div>
+      <button className="blue-button" onClick={createUser}>Cadastre-se</button>
+    </div>
+  );
+}
+
+export default Registration;
+
+/*
 import React, { Component } from 'react';
 import { Auth } from 'aws-amplify';
 
@@ -62,3 +115,4 @@ render () {
 }
 
 export default Registration;
+*/
