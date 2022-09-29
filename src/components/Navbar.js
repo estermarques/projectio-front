@@ -14,26 +14,42 @@ function showBar() {
 }
 
 function NavbarComponent(props) {
+  const search = () => {
+    //! redirecionar para pagina de listar enviando os campos dos inputs
+  }
+
+  const getSubjects = () => {
+    fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/subject/", {
+      "method": "GET"
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
   return (
     <div>
       <div className="menu">
-        <button className="title">PROJECT.io</button>
+        <a className="title" href="http://localhost:3000/">PROJECT.io</a>
         <div className="buttons-div">
           <button className="search" onClick={showBar}>
             <img src="/search-icon.png" alt="Pesquisar" />
           </button>
-          <button className="button">{props.firstBtn}</button>
-          <button className="button">{props.secondBtn}</button>
+          <button className="button" onClick="location.href ={props.firstBtnLink}">{props.firstBtn}</button>
+          <button className="button" href={props.secondBtnLink}>{props.secondBtn}</button>
         </div>
       </div>
       <div className="search-area">
         <h1 className="search-label">Pesquisar por projeto</h1>
         <form className="form-area">
-          <input type="text" name="title" placeholder="Título" className="input"/>
-          <input type="text" name="author" placeholder="Autor" className="input"/>
-          <input type="text" name="theme" placeholder="Tema" className="input"/>
-          <input type="text" name="subject" placeholder="Matéria" className="input"/>
-          <button type="submit" className="blue-button">Pesquisar</button>
+          <input type="text" name="title" placeholder="Título" className="input" id="title"/>
+          <input type="text" name="author" placeholder="Autor" className="input" id="author"/>
+          <input type="text" name="subject" placeholder="Matéria" className="input" id="subject"/>
+          <button type="submit" className="blue-button" onClick={search}>Pesquisar</button>
         </form>
       </div>
     </div>

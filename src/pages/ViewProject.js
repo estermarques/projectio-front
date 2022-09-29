@@ -11,6 +11,28 @@ function ViewProject(props) {
     setIsOpen(!isOpen);
   }
 
+  const comment = () => {
+    const text = (document.getElementById('text').value);
+
+    const obj = {
+      text,
+      projectId: props.projectId,
+      userId: props.userId,
+    };
+  
+    fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/comment", {
+      "method": "POST",
+      "body": JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
   return (
     <div className="project-page">
       <div className="project-title-div">
@@ -62,9 +84,9 @@ function ViewProject(props) {
         text="O grande empenho dos egressos, como eu, dos atuais alunos, dos professores, dos servidores técnicoadministrativos ajudou na consolidação de nossa universidade."
       />
       <form className="create-comment">
-        <input type="text" name="new-comment" placeholder="Digite seu comentário" className="comment-input"/>
+        <input type="text" name="new-comment" placeholder="Digite seu comentário" className="comment-input" id="text"/>
         <button type="submit" className="send">
-          <img src="/send-icon.png" alt="Enviar" className="send-icon"/>
+          <img src="/send-icon.png" alt="Enviar" className="send-icon" onClick={comment}/>
         </button>
       </form>
 

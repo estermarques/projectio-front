@@ -2,14 +2,30 @@ import Project from '../components/Project';
 import './ListProjects.css';
 
 function ListProjects(props) {
-  const getPrj = (projectId) => {
+  const getAllProjects = () => {
     const obj = {
-      projectId
+      userId: props.userId,
+      author: props.author,
+      title: props.title,
+      subject: props.subject
     };
 
     fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/project", {
       "method": "GET",
-      "body": JSON.stringify(obj)
+      "queryStringParameters": JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
+  const getSingleProject = (projectId) => {
+    fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/project/" + projectId, {
+      "method": "GET"
     })
     .then(response => response.json())
     .then(response => {
