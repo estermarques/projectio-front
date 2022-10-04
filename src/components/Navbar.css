@@ -32,15 +32,32 @@
   border: none;
 }
 
+.search:hover {
+  cursor: pointer;
+}
+
 .button {
   background-color: #fff;
   box-shadow: none;
   color: #296CA6;
   width: 150px;
   height: 40px;
-  border-radius: 4px;
+  border-radius: 5px;
   border-color: #296CA6;
+  border-style: inset;
+  border-width: 2px;
   font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #296CA6;
 }
 
 .search-area {

@@ -32,6 +32,10 @@
   border: none;
 }
 
+.send:hover {
+  cursor: pointer;
+}
+
 .send-icon {
   width: 25px;
   height: auto;
@@ -49,6 +53,7 @@
   width: 100%;
   font-size: 15px;
   color: #296CA6;
+  margin-bottom: 30px;
 }
 
 .project-title-div {
@@ -60,6 +65,10 @@
 .project-icon-button {
   border: none;
   background-color: #f2f2f2;
+}
+
+.project-icon-button:hover {
+  cursor: pointer;
 }
 
 .project-icon {

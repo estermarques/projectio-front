@@ -39,8 +39,8 @@ function NavbarComponent(props) {
           <button className="search" onClick={showBar}>
             <img src="/search-icon.png" alt="Pesquisar" />
           </button>
-          <button className="button" onClick="location.href ={props.firstBtnLink}">{props.firstBtn}</button>
-          <button className="button" href={props.secondBtnLink}>{props.secondBtn}</button>
+          <a className="button" href={props.firstBtnLink}>{props.firstBtn}</a>
+          <a className="button" href={props.secondBtnLink}>{props.secondBtn}</a>
         </div>
       </div>
       <div className="search-area">

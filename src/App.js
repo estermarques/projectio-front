@@ -15,7 +15,7 @@ function App() {
         firstBtn="Adicionar projeto"
         firstBtnLink="http://localhost:3000/create-project"
         secondBtn="Sair"
-        secondBtnLink="http://localhost:3000/"
+        secondBtnLink="http://localhost:3000/create-project"
       />
       <div className="App">
         <AppRouter/>

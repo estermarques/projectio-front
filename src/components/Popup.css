@@ -40,3 +40,7 @@
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.popup-btn:hover {
+  cursor: pointer;
+}
