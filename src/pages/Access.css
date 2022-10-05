@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 .access-label {
@@ -23,7 +24,10 @@
   border-style: none;
   font-size: 18px;
   /* font-family: 'Roboto'; */
-  margin-bottom: 15px;
+}
+
+.blue-button:hover {
+  cursor: pointer;
 }
 
 .checkbox-div {
@@ -43,4 +47,19 @@
   font-weight: 200;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+.success-message {
+  background-color: rgba(9, 171, 9, 0.5);;
+  color: #296CA6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  border-radius: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: none;
 }

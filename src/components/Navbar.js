@@ -1,19 +1,19 @@
 import './Navbar.css';
 
-let slideSearch = document.querySelector(".search-area");
-let buttonClicked = 0;
-
-function showBar() {
-  if (buttonClicked === 0) {
-    slideSearch.style.display = "flex";
-    buttonClicked = 1;
-  } else {
-    slideSearch.style.display = "none";
-    buttonClicked = 0;
-  }
-}
-
 function NavbarComponent(props) {
+  let slideSearch = document.querySelector(".search-area");
+  let buttonClicked = 0;
+
+  const showBar = () => {
+    if (buttonClicked === 0) {
+      slideSearch.style.display = "flex";
+      buttonClicked = 1;
+    } else {
+      slideSearch.style.display = "none";
+      buttonClicked = 0;
+    }
+  }
+
   const search = () => {
     //! redirecionar para pagina de listar enviando os campos dos inputs
   }
@@ -37,7 +37,7 @@ function NavbarComponent(props) {
         <a className="title" href="http://localhost:3000/">PROJECT.io</a>
         <div className="buttons-div">
           <button className="search" onClick={showBar}>
-            <img src="/search-icon.png" alt="Pesquisar" />
+            <img src="/search-icon.png" alt="Pesquisar" className="search-img" />
           </button>
           <a className="button" href={props.firstBtnLink}>{props.firstBtn}</a>
           <a className="button" href={props.secondBtnLink}>{props.secondBtn}</a>

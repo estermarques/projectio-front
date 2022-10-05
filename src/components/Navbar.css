@@ -36,6 +36,10 @@
   cursor: pointer;
 }
 
+.search-img {
+  height: 30px;
+}
+
 .button {
   background-color: #fff;
   box-shadow: none;

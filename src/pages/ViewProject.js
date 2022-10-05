@@ -39,10 +39,10 @@ function ViewProject(props) {
         <h1 className="project-page-title">{props.title}</h1>
         <div>
           <button className="project-icon-button">
-            <img src="/edit2-icon.png" alt="Editar projeto" className="project-icon"/>
+            <img src="/edit-icon.png" alt="Editar projeto" className="project-icon"/>
           </button>
           <button className="project-icon-button">
-            <img src="/trash-icon.webp" alt="Apagar projeto" className="project-icon" onClick={togglePopup}/>
+            <img src="/delete-icon.webp" alt="Apagar projeto" className="project-icon" onClick={togglePopup}/>
           </button>
         </div>
       </div>

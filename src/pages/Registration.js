@@ -1,16 +1,16 @@
 import './Access.css';
 
 function Registration() {
+  let successMessage = document.querySelector(".success-message");
+
   const createUser = () => {
     const email = (document.getElementById('email').value);
     const name = (document.getElementById('name').value);
-    const password = (document.getElementById('password').value);
     const isProfessor = (!!document.getElementById('isProfessor').value);
 
     const obj = {
       name,
       email,
-      password,
       isProfessor,
     };
 
@@ -21,6 +21,7 @@ function Registration() {
     .then(response => response.json())
     .then(response => {
       console.log(response)
+      successMessage.style.display = "flex";
     })
     .catch(err => {
       console.log(err);
@@ -38,13 +39,14 @@ function Registration() {
         id="name"
       />
       <input type="text" name="email" placeholder="e-mail" className="input" id="email"/>
-      <input type="password" name="password" placeholder="senha" className="input" id="password"/>
-      <input type="password" name="password" placeholder="confirme a senha" className="input" id="password2"/>
+      {/* <input type="password" name="password" placeholder="senha" className="input" id="password"/>
+      <input type="password" name="password" placeholder="confirme a senha" className="input" id="password2"/> */}
       <div className="checkbox-div">
         <input type="checkbox" name="isProfessor" className="input-checkbox" id="isProfessor"/>
         <h2 className="checkbox-text">Sou um professor</h2>
       </div>
       <button className="blue-button" onClick={createUser}>Cadastre-se</button>
+      <h2 className='success-message'>Usuário criado<br/>A senha foi enviada para o e-mail</h2>
     </div>
   );
 }
