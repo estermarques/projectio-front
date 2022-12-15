@@ -1,13 +1,34 @@
 import './Access.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function Login() {
   return (
     <div className="access-page">
-      <h1 className="access-label">Login</h1>
-      <input type="text" name="email" placeholder="e-mail" className="input"/>
-      <input type="password" name="password" placeholder="senha" className="input"/>
-      <button type="submit" className="blue-button">Login</button>
-      <button type="submit" className="blue-button">Cadastre-se</button>
+      <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="E-mail" />
+        <Form.Text className="text-muted">
+          O e-mail não será compartilhado com ninguém
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Senha</Form.Label>
+        <Form.Control type="password" placeholder="Senha" />
+      </Form.Group>
+      <div className='flex-separate'>
+      <Button variant="primary" type="submit">
+        Login
+      </Button>
+      </div>
+      <div className='flex-separate'>
+      <Button variant="secondary" type="submit">
+        Cadastre-se
+      </Button>
+      </div>
+    </Form>
     </div>
   );
 }

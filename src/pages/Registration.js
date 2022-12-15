@@ -1,4 +1,6 @@
 import './Access.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function Registration() {
   let successMessage = document.querySelector(".success-message");
@@ -28,93 +30,41 @@ function Registration() {
     });
   }
 
+  //! Exibir mensagem “Usuário criado com sucesso”
+
   return (
     <div className="access-page">
-      <h1 className="access-label">Cadastre-se</h1>
-      <input
-        type="text"
-        name="name"
-        placeholder="nome"
-        className="input"
-        id="name"
-      />
-      <input type="text" name="email" placeholder="e-mail" className="input" id="email"/>
-      {/* <input type="password" name="password" placeholder="senha" className="input" id="password"/>
-      <input type="password" name="password" placeholder="confirme a senha" className="input" id="password2"/> */}
-      <div className="checkbox-div">
-        <input type="checkbox" name="isProfessor" className="input-checkbox" id="isProfessor"/>
-        <h2 className="checkbox-text">Sou um professor</h2>
+       <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Nome</Form.Label>
+        <Form.Control type="name" placeholder="Nome" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Endereço de Email</Form.Label>
+        <Form.Control type="email" placeholder="E-mail" />
+        <Form.Text className="text-muted">
+          O e-mail não será compartilhado com ninguém
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Senha</Form.Label>
+        <Form.Control type="password" placeholder="Senha" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Confirme sua senha</Form.Label>
+        <Form.Control type="password" placeholder="Digite a senha mais uma vez" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Sou um professor" />
+      </Form.Group>
+      <div className='flex-separate'>
+      <Button variant="primary" type="submit">
+        Cadastre-se
+      </Button>
       </div>
-      <button className="blue-button" onClick={createUser}>Cadastre-se</button>
-      <h2 className='success-message'>Usuário criado<br/>A senha foi enviada para o e-mail</h2>
+    </Form>
     </div>
   );
 }
 
 export default Registration;
-
-/*
-import React, { Component } from 'react';
-import { Auth } from 'aws-amplify';
-
-class Registration extends Component {
-  state = {
-    signedUp: false,
-    confirmed: false,
-    name: '',
-    password: '',
-    email: '',
-    confirmationCode: '',
-    submittingSignUp: false,
-    submittingConfirmation: false
-}
-
-constructor(props) {
-  super(props);
-
-  this.handleSubmitSignUp = this.handleSubmitSignUp.bind(this);
-}
-
-handleSubmitSignUp(e) {
-    e.preventDefault(e);
-    const { confirmed, signedUp, name, password, email, isProfessor } = this.state;
-    
-    if(!confirmed && !signedUp) {
-        this.setState({ submittingSignUp: true });
-
-        Auth.signUp({
-            username: name,
-            password,
-            attributes: {
-              email,
-              isProfessor,
-              name
-            }
-        })
-        .then(() => this.setState({ signedUp: true, submittingSignUp: false }))
-        .catch(err => {
-            this.setState({ submittingSignUp: false });
-            console.log(err);
-        });
-    }
-}
-
-render () {
-  return (
-    <form className="access-page"  onSubmit={this.handleSubmitSignUp}>
-      <h1 className="access-label">Cadastre-se</h1>
-      <input type="text" name="name" placeholder="nome" className="input"/>
-      <input type="text" name="email" placeholder="e-mail" className="input"/>
-      <input type="password" name="password" placeholder="senha" className="input"/>
-      <div className="checkbox-div">
-        <input type="checkbox" name="isProfessor" className="input-checkbox"/>
-        <h2 className="checkbox-text">Sou um professor</h2>
-      </div>
-      <button disabled={this.state.submittingSignUp} type="submit" className="blue-button">Cadastre-se</button>
-    </form>
-  )
-  }
-}
-
-export default Registration;
-*/

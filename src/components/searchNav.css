@@ -1,0 +1,17 @@
+.search-nav {
+  position: absolute !important;
+  min-width: 100%;
+  z-index: 1000 !important;
+}
+
+.active-navbar {
+  display: solid !important;
+}
+
+.hidden-navbar {
+  display: none !important;
+}
+
+.disabled-select {
+  color: lightgrey;
+}

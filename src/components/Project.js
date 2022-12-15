@@ -7,7 +7,7 @@ function Project(props) {
         <h1 className="title">{props.title}</h1>
         <h3 className="author">{props.author}</h3>
         <h2 className="description">{props.description}</h2>
-        <a href="https://www.w3schools.com/html/html_links.asp" className="project-link">Abrir projeto</a>
+        <p href="https://www.w3schools.com/html/html_links.asp" className="project-link">Abrir projeto</p>
       </div>
     </a>
   );

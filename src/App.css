@@ -1,7 +1,30 @@
 .App {
-  margin: 0 7%;
-  padding: 0 7%;
-  padding-top: 20px;
-  background-color: #f2f2f2;
-  height: 100%;
+  padding: 0 12%;
+  background: rgb(242, 242, 242);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 5% 95%;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+

@@ -1,13 +1,14 @@
 import Project from '../components/Project';
 import './ListProjects.css';
+import ProjectCard from '../components/projectCard.jsx'
 
 function ListProjects(props) {
   const getAllProjects = () => {
     const obj = {
-      userId: props.userId,
-      author: props.author,
-      title: props.title,
-      subject: props.subject
+      userId: props.location.state.userId,
+      author: props.location.state.author,
+      title: props.location.state.title,
+      subject: props.location.state.subject
     };
 
     fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/project", {
@@ -34,6 +35,8 @@ function ListProjects(props) {
     .catch(err => {
       console.log(err);
     });
+
+    // ! redirecionar para página que mostra um projeto
   }
 
   return (
@@ -41,28 +44,10 @@ function ListProjects(props) {
       <div className="title-div">
         <h1>{props.title}</h1>
       </div>
+      
       <div className="projects-div">
-        <div className="prj">
-          <Project
-            title="um titulo bem grande"
-            author="eu mesma"
-            description="Suspendisse ac condimentum velit. Quisque ornare vitae lectus vel varius. Pellentesque tincidunt ultrices ullamcorper. Aenean quis pulvinar risus, at varius magna."
-          />
-        </div>
-        <div className="prj">
-          <Project
-            title="um outro titulo grande"
-            author="novamente eu"
-            description="Nunc urna arcu, molestie ac iaculis quis, laoreet sed lectus. Aenean congue quam sed leo aliquet, ac scelerisque augue efficitur. Suspendisse in facilisis nulla."
-          />
-        </div>
-        <div className="prj">
-          <Project
-            title="terceiro titulo"
-            author="eu"
-            description="Ut porta felis vel purus efficitur porttitor. Integer posuere euismod tellus sit amet convallis. Nam a ligula id diam commodo pulvinar nec sit amet sapien."
-          />
-        </div>
+        <ProjectCard title="Projeto cronômetro" subtitle="Ester Rodrigues" text="Um projeto simples, ideal para os desenvolvedores iniciantes."/>
+        <ProjectCard title="Lista de Tarefas" subtitle="Ester Rodrigues" text="Desenvolvimento de uma lista de tarefas online usando JavaScript"/>
       </div>
     </div>
   );

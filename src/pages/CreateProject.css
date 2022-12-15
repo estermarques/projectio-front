@@ -1,49 +1,7 @@
-.create-project-page {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 15px;
+.choose-lesson-page {
+  background: white;
+  height: 100%;
+  padding: 30px;
+  overflow: auto;
 }
 
-.create-project-label {
-  color: #296CA6;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-}
-
-.blue-button{
-  background-color: #296CA6;
-  box-shadow: none;
-  color: #fefefe;
-  padding: 15px 0;
-  width: 402px;
-  border-radius: 4px;
-  border-style: none;
-  font-size: 18px;
-  /* font-family: 'Roboto'; */
-  margin-bottom: 15px;
-}
-
-
-.input {
-  border-radius: 4px;
-  border-width: thin;
-  border-color: #296CA6;
-  box-shadow: none;
-  padding: 11px 20px;
-  width: 360px;
-  height: 25px;
-  font-size: 15px;
-  margin-bottom: 15px;
-  color: #296CA6;
-}
-
-input::placeholder{
-  color: #296CA6;
-}
-
-.lesson-learned-btn {
-  border: none;
-  background-color: #bfbfbf;
-  margin-bottom: 20px;
-}

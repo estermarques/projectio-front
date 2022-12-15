@@ -1,10 +1,13 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import './Navbar.css';
 
 function NavbarComponent(props) {
-  let slideSearch = document.querySelector(".search-area");
   let buttonClicked = 0;
 
   const showBar = () => {
+    let slideSearch = document.querySelector(".search-area");
+
     if (buttonClicked === 0) {
       slideSearch.style.display = "flex";
       buttonClicked = 1;
@@ -14,9 +17,19 @@ function NavbarComponent(props) {
     }
   }
 
-  const search = () => {
-    //! redirecionar para pagina de listar enviando os campos dos inputs
-  }
+  const [state, setState] = useState({
+    title: "",
+    author: "",
+    subject: ""
+  });
+
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
   const getSubjects = () => {
     fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/subject/", {
@@ -46,10 +59,19 @@ function NavbarComponent(props) {
       <div className="search-area">
         <h1 className="search-label">Pesquisar por projeto</h1>
         <form className="form-area">
-          <input type="text" name="title" placeholder="Título" className="input" id="title"/>
-          <input type="text" name="author" placeholder="Autor" className="input" id="author"/>
-          <input type="text" name="subject" placeholder="Matéria" className="input" id="subject"/>
-          <button type="submit" className="blue-button" onClick={search}>Pesquisar</button>
+          <input type="text" name="title" placeholder="Título" className="input" onChange={handleInputChange}/>
+          <input type="text" name="author" placeholder="Autor" className="input" onChange={handleInputChange}/>
+          <input type="text" name="subject" placeholder="Matéria" className="input" onChange={handleInputChange}/>
+          {/* <button type="submit" className="blue-button" onClick={search}>Pesquisar</button> */}
+          <Link
+            className="blue-button"
+            to={{
+              pathname: "/",
+              state
+            }}
+          >
+            Pesquisar
+          </Link>
         </form>
       </div>
     </div>

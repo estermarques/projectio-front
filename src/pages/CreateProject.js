@@ -1,4 +1,6 @@
 import './CreateProject.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function CreateProject() {
   const createPrj = () => {
@@ -35,14 +37,38 @@ function CreateProject() {
 
   return (
     <div className="create-project-page">
-      <h1 className="create-project-label">Adicione as informações do seu novo projeto</h1>
-      <input type="text" name="title" placeholder="Título" className="input" id="title"/>
-      <input type="text" name="description" placeholder="Descrição" className="input" id="description"/>
-      <input type="text" name="repositoryLink" placeholder="Link do repositório" className="input" id="repositoryLink"/>
-      <input type="text" name="stepsTaken" placeholder="Atividades realizadas no desenvolvimento do projeto" className="input" id="stepsTaken"/>
-      <input type="text" name="theme" placeholder="Tema. Ex: Testes automatizados" className="input" id="theme"/>
-      <input type="text" name="subject" placeholder="Matérias relacionadas" className="input" id="subject"/>
-      <button type="submit" className="blue-button" onClick={createPrj}>Salvar</button>
+      <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Título do Projeto</Form.Label>
+        <Form.Control type="email" placeholder="Título" />
+        <Form.Text className="text-muted">
+          O titulo do seu projeto
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Link do Repositório</Form.Label>
+        <Form.Control type="email" placeholder="Link" />
+        <Form.Text className="text-muted">
+          O link para o repositório do seu projeto
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Descrição do Projeto</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Temas do Projeto</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Matérias Relacionadas</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Salvar
+      </Button>
+    </Form>
     </div>
   );
 }

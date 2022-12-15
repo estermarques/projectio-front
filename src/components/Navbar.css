@@ -20,6 +20,12 @@
   color: #296CA6;
 }
 
+.title-font {
+  font-family: 'Silkscreen', cursive;
+  color: #296CA6;
+  font-weight: bold;
+}
+
 .buttons-div {
   display: flex;
   align-items: center;

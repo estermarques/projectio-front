@@ -4,6 +4,16 @@
   right: 0;
 }
 
+.icon-button {
+  font-size: 1.5rem;
+  background-color: white;
+  border: none;
+}
+
+.line-flex {
+  display: grid;
+  grid-template-columns: 100fr 1fr;
+}
 .project-page th {
   width: 200px;
 }

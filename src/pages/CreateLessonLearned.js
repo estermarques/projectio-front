@@ -1,38 +1,40 @@
 import './CreateProject.css';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 function CreateLessonLearned(props) {
-  const createLL = () => {
-    const challenge = (document.getElementById('challenge').value);
-    const solution = (document.getElementById('solution').value);
-    const studyLinks = (document.getElementById('studyLinks').value);
-
-    const obj = {
-      challenge,
-      solution,
-      studyLinks,
-      projectId: props.projectId
-    };
-
-    fetch("https://v93r9d3h1j.execute-api.us-east-1.amazonaws.com/dev/lessonLearned", {
-      "method": "POST",
-      "body": JSON.stringify(obj)
-    })
-    .then(response => response.json())
-    .then(response => {
-      console.log(response)
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
-
+  
   return (
-    <div className="create-project-page">
-      <h1 className="create-project-label">Lição aprendida</h1>
-      <input type="text" name="challenge" placeholder="Problema encontrado" className="input" id="challenge"/>
-      <input type="text" name="solution" placeholder="Solução" className="input" id="solution"/>
-      <input type="text" name="studyLinks" placeholder="Links onde você estudou sobre o problema" className="input" id="studyLinks"/>
-      <button type="submit" className="blue-button" onClick={createLL}>Salvar</button>
+    <div className="choose-lesson-page">
+      <Form>
+      <Row>
+        <Col>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>Desafio Encontrado</Form.Label>
+          <Form.Control type="email" placeholder="Qual desafio você encontrou?" />
+        </Form.Group>
+        </Col>
+        <Col>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Link para solução</Form.Label>
+        <Form.Control type="email" placeholder="Onde encontrou a solução?" />
+      </Form.Group>
+      </Col>
+       
+       
+      </Row>
+      
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Como Chegou na solução?</Form.Label>
+        <Form.Control as="textarea" rows={5} />
+      </Form.Group>
+
+      <Button variant="primary" type="submit">
+        Salvar
+      </Button>
+    </Form>
     </div>
   );
 }

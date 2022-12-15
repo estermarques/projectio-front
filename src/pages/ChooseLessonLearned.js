@@ -1,5 +1,6 @@
 import './CreateProject.css';
-import LessonLearned from '../components/LessonLearned';
+import Accordion from 'react-bootstrap/Accordion';
+import AccordionItem from '../components/accordionComponent'
 
 function ChooseLessonLearned(props) {
   const getAllLeassons = () => {
@@ -41,17 +42,13 @@ function ChooseLessonLearned(props) {
   }
 
   return (
-    <div className="create-project-page">
-      <h1 className="create-project-label">Lições aprendidas do projeto</h1>
-      <button className="lesson-learned-btn" onClick={getLeassonLearned} id="temporario">
-      <LessonLearned
-        challenge="um desafio"
-        solution="eu mesma"
-        studyLinks="http://localhost:3000/"
-      />
-      </button>
-      <button type="submit" className="blue-button">Adicionar nova</button>
+    <div className='choose-lesson-page'>
+      <Accordion>
+        <AccordionItem eventKey={0} title="Eu precisava descobrir como acabar o TCC em pouco tempo" text="Eu usei a força do ódio, ta funcionando bem."/>
+        <AccordionItem eventKey={1} title="Eu precisava descobrir como acabar o TCC em pouco tempo" text="Eu usei a força do ódio, ta funcionando bem."/>
+      </Accordion>
     </div>
+    
   );
 }
 
